@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Add text btn</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body {
+            text-align: center;
+            text-transform: capitalize;
+            background-color: blueviolet;
+            color: antiquewhite;
+            font-family: monospace;
+            font-size: 18px;
+        }
+
+        .container {
+            width: 50%;
+            height: 100%;
+        }
+
+        .left-container {
+            float: left;
+        }
+
+        .right-container {
+            float: right;
+        }
+
+        button {
+            width: 300px;
+            height: 60px;
+            background-color: #bc84ef;
+            border: 2px solid #d1a8f6;
+            font-size: 18px;
+            font-family: monospace;
+            font-weight: 800;
+            border-radius: 30px;
+            text-transform: capitalize;
+        }
+
+        .div-namebtn button {
+            width: 180px;
+            height: 40px;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left-container container">
+        <div style="margin-bottom:50px;">
+            <h1>Btn click - Append New dynamic text</h1>
+
+            <button onclick="Add()">Add Welcome</button>
+            <div id="container"></div>
+        </div>
+        <div class="div-namebtn" style="margin-bottom:50px;">
+            <h1>Btn click - change text</h1>
+
+            <h3 id="name">Name</h3>
+            <button onclick="update(event)">Shubasini</button>
+            <button onclick="update(event)">Praveen</button>
+            <button onclick="update(event)">SP</button>
+        </div>
+    </div>
+    <div class="right-container container">
+        <div style="margin-bottom:50px;">
+            <h1>Btn click - change Btn color</h1>
+            <button onclick="change()" id="btn">Change color</button>
+        </div>
+        <div class="divhide-text" style="margin-bottom:50px;">
+            <h1>txt click - Delete text</h1>
+
+            <div class="del-text" style="text-align: left;padding-left:160px;">
+
+                <h3 onclick="deltext(event)">One</h3>
+                <h3 onclick="deltext(event)">Two</h3>
+                <h3 onclick="deltext(event)">Three</h3>
+                <h3 onclick="deltext(event)">Four</h3>
+                <h3 onclick="deltext(event)">Five</h3>
+                <h3 onclick="deltext(event)">Six</h3>
+                <h3 onclick="deltext(event)">seven</h3>
+                <h3 onclick="deltext(event)">eight</h3>
+                <h3 onclick="deltext(event)">nine</h3>
+
+
+            </div>
+        </div>
+    </div>
+    <script>
+        // Btn click - Append New dynamic text
+        var container = document.getElementById("container");
+        function Add() {
+            //create element
+            var h1 = document.createElement("h1");
+            h1.textContent = "Welcome to JS";
+            container.append(h1);
+        }
+
+        //Btn click - change Btn color
+        var btn = document.getElementById("btn");
+        function change() {
+            btn.style.backgroundColor = "#6504bf";
+        }
+
+        // Btn click - change text
+        var newname = document.getElementById("name");
+        function update(event) {
+            newname.textContent = event.target.textContent;
+        }
+
+        // txt click - Delete text
+        function deltext(event) {
+            event.target.remove();
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
